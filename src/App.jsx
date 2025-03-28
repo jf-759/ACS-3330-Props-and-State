@@ -13,6 +13,9 @@ function App() {
   }
 
   const totalCount = counts.reduce((sum, count) => sum + count, 0);
+  const resetCounts = () => {
+    setCounts([0, 0, 0])
+  }
 
   return (
     <div className="App">
@@ -26,6 +29,7 @@ function App() {
         decrement={() => updateCount(index, -1)} 
         />
       ))}
+      <button onClick={resetCounts}>Reset</button>
     </div>
   )
 }
